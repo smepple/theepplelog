@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.7'
+
+gem 'jquery-rails'
+# gem 'thin'
+gem 'haml-rails'
+gem 'skeleton-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,7 +23,9 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
+group :development do
+  gem 'annotate'
+end
 
 group :test do
   gem 'capybara'

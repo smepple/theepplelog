@@ -6,6 +6,7 @@ gem 'jquery-rails'
 # gem 'thin'
 gem 'haml-rails'
 gem 'skeleton-rails'
+gem 'sorcery'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

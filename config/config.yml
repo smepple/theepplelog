@@ -1,0 +1,13 @@
+# Your information
+name:    Scott Epple
+tagline: this is where I write
+twitter: smepple
+github:  smepple
+email:   smepple@gmail.com
+
+# Google Analytics
+# ga_id:   
+
+# Admin credentials
+login:    = ENV["login"] ? ENV["login"] : "smepple"
+password: = ENV["password"] ? ENV["password"] : "jackfru!thero"

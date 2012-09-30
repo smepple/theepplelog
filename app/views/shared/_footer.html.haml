@@ -1,0 +1,13 @@
+.footer
+  %hr
+
+  .nav-links
+    = link_to "Home", root_path
+    = link_to "About", about_path
+    = link_to "Admin", admin_path
+
+  &copy Copyright 2012
+  - current_year = Time.now.strftime("%Y")
+  - if current_year > "2012"
+    = "- #{current_year}"
+  Scott Epple

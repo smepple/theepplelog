@@ -1,6 +1,6 @@
-%h1 New post
+%h1 Edit post
 
-= form_for @post do |f|
+= form_for @post, url: post_path(@post) do |f|
   = f.text_field :title, placeholder: "Give this post a title"
   = f.text_area :content, placeholder: "Start writing..."
   = f.label :draft do

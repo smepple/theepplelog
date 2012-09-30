@@ -1,0 +1,10 @@
+= render 'shared/header'
+
+.post-header.six.columns
+  %em= @post.published_at.strftime("%b %e %Y")
+  %h3= @post.title
+
+.ten.columns
+  %p= @post.content
+
+= render 'shared/footer'

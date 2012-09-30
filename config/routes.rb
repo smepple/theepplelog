@@ -1,8 +1,15 @@
 Theepplelog::Application.routes.draw do
-  root to: "posts#index"
 
+  match '/about', :to => 'static_pages#about'
+  match '/admin', :to => 'posts#admin'
+  match '/new', :to => 'posts#new'
+  get '/:slug', :to => 'posts#show', :as => 'post'
+  post '/:id', :to => 'posts#update'
+  put '/:id', :to => 'posts#update'
   resources :posts
   resources :users
+
+  root to: "posts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

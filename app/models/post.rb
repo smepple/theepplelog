@@ -13,5 +13,16 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :draft, :published_at, :slug, :title
+  attr_accessible :title, :slug, :content, :draft, :published_at
+
+  before_create :set_slug
+  before_save :set_published_at
+
+  def set_slug
+    self.slug = self.title.parameterize
+  end
+
+  def set_published_at
+    self.published_at = Time.now.utc unless self.draft?
+  end
 end

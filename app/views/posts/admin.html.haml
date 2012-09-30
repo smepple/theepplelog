@@ -1,0 +1,13 @@
+%h1 Admin
+
+= link_to "New post", new_post_path
+
+%h2 Drafts
+- @drafts.each do |d|
+  %p= link_to d.title, edit_post_path(d)
+
+%h2 Published
+- @published.each do |p|
+  %p= link_to p.title, edit_post_path(p)
+
+= link_to "Home", root_path

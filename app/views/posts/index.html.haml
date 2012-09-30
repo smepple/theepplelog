@@ -1,7 +1,11 @@
-%h1 the epplelog
+= render 'shared/header'
 
 - if @posts.any?
   - @posts.each do |p|
-    %h2= p.title
+    .post-stub
+      %em= p.published_at.strftime("%b %e %Y")
+      %h3.title= link_to p.title, post_path(p.slug)
 - else
   %em Welcome! More content coming soon.
+
+= render 'shared/footer'

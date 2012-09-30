@@ -23,6 +23,8 @@ class Post < ActiveRecord::Base
   end
 
   def set_published_at
-    self.published_at = Time.now.utc unless self.draft?
+    if !self.draft? && self.published_at.nil?
+      self.published_at = Time.now.utc
+    end
   end
 end

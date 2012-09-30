@@ -1,13 +1,14 @@
 = provide :title, "new post"
 
-%h2 New post
+.header
+  %h2 New post
 
-= form_for @post do |f|
-  = f.text_field :title, placeholder: "Give this post a title"
-  = f.text_area :content, placeholder: "Start writing..."
-  = f.label :draft do
-    = f.check_box :draft
-    Draft
-  = f.submit
-
-= link_to "Back", admin_path
+.form.wide.ten.columns.offset-by-three
+  = form_for @post do |f|
+    = f.text_field :title, placeholder: "Give this post a title..."
+    = f.text_area :content, placeholder: "Start writing..."
+    = f.label :draft do
+      = f.check_box :draft
+      Draft
+    = f.submit
+    = link_to "Cancel", admin_path

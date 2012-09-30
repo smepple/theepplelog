@@ -3,6 +3,7 @@ Theepplelog::Application.routes.draw do
   match '/about', :to => 'static_pages#about'
   match '/admin', :to => 'posts#admin'
   match '/new', :to => 'posts#new'
+  match '/posts', :to => 'posts#index'
   get '/:slug', :to => 'posts#show', :as => 'post'
   post '/:id', :to => 'posts#update'
   put '/:id', :to => 'posts#update'

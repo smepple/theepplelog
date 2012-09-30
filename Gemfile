@@ -8,6 +8,7 @@ gem 'haml-rails'
 gem 'skeleton-rails'
 gem 'sorcery'
 gem 'redcarpet'
+gem 'will_paginate'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

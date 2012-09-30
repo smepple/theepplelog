@@ -1,11 +1,20 @@
-= link_to "New post", new_post_path
+.header
+  .nav-links
+    = link_to "Home", root_path
+    = link_to "New post", new_post_path
+  %hr
 
-%h2 Drafts
-- @drafts.each do |d|
-  %p= link_to d.title, edit_post_path(d)
+.eight.columns
+  .post-list
+    %h2 Drafts
+    - @drafts.each do |d|
+      %p= link_to d.title, edit_post_path(d)
 
-%h2 Published
-- @published.each do |p|
-  %p= link_to p.title, edit_post_path(p)
+.eight.columns
+  .post-list
+    %h2 Published
+    - @published.each do |p|
+      %p= link_to p.title, edit_post_path(p)
 
-= link_to "Home", root_path
+.sixteen.columns.footer
+  %p= debug(params) if Rails.env.development?

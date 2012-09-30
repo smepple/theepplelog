@@ -16,18 +16,17 @@
  */
 
 .header {
+  text-align: center;
   margin-top: 30px;
 }
 
 a.logo {
   display: block;
-  text-align: center;
   text-decoration: none;
 }
 
 em.tagline {
   display: block;
-  text-align: center;
   margin: -5px 0 5px 0;
 }
 
@@ -36,12 +35,41 @@ em.tagline {
   margin-bottom: 40px;
 }
 
+.pagination {
+  text-align: center;
+}
+
 h3.title a {
   text-decoration: none;
 }
 
 .post-header {
   text-align: center;
+}
+
+.post-list {
+  text-align: center;
+}
+
+.form.wide {
+  text-align: center;
+}
+
+.form.wide input[type="text"],
+.form.wide textarea,
+.form.wide textarea:focus {
+  border: none;
+  outline: 0px none transparent;
+  border-bottom: 1px solid #CCC;
+  width: 100%;
+}
+
+.form.wide textarea,
+.form.wide textarea:focus {
+  overflow: auto;
+  resize: none;
+  height: 450px;
+  width: 100%;
 }
 
 .footer {

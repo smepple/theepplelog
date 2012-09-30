@@ -1,12 +1,16 @@
 = render 'shared/header'
 
-- if @posts.any?
-  - @posts.each do |p|
+#posts
+  - if @posts.any?
+    / - @posts.each do |p|
+    /   .post-stub
+    /     %em= p.published_at.strftime("%b %e %Y")
+    /     %h3.title= link_to p.title, post_path(p.slug)
+    = render @posts
+  - else
     .post-stub
-      %em= p.published_at.strftime("%b %e %Y")
-      %h3.title= link_to p.title, post_path(p.slug)
-- else
-  .post-stub
-    %em Welcome! More content coming soon.
+      %em Welcome! More content coming soon.
+
+= will_paginate @posts
 
 = render 'shared/footer'

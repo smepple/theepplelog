@@ -5,6 +5,6 @@
   %h3= @post.title
 
 .ten.columns
-  %p= @post.content
+  %p= markdown(@post.content)
 
 = render 'shared/footer'

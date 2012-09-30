@@ -15,6 +15,8 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :slug, :content, :draft, :published_at
 
+  default_scope :order => 'published_at DESC'
+
   before_create :set_slug
   before_save :set_published_at
 

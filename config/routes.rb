@@ -4,6 +4,8 @@ Theepplelog::Application.routes.draw do
   match '/admin', :to => 'posts#admin'
   match '/new', :to => 'posts#new'
   match '/posts', :to => 'posts#index'
+  match '/archive', :to => 'posts#archive'
+  match 'archive/:year/:month', :to => 'posts#archive', :as => 'archives'
   get '/:slug', :to => 'posts#show', :as => 'post'
   post '/:id', :to => 'posts#update'
   put '/:id', :to => 'posts#update'

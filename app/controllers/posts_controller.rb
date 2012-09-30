@@ -3,7 +3,15 @@ class PostsController < ApplicationController
   before_filter :find_post, only: ['edit', 'update']
 
   def index
-    @posts = Post.where(draft: false).paginate(:page => params[:page], :per_page => 10).order('published_at DESC')
+    @posts = Post.where(draft: false).paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def archive
+    @posts_by_month = Post.where(draft: false).all.group_by { |post| post.published_at.strftime("%B %Y") }
+    @posts_in_month = Post.where('draft = ? AND published_at BETWEEN ? AND ?', 
+                                    false, 
+                                    "#{params[:year]}-#{params[:month]}-01",
+                                    "#{params[:year]}-#{params[:month]}-31").all
   end
 
   def admin

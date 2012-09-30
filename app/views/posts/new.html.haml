@@ -1,4 +1,6 @@
-%h1 New post
+= provide :title, "new post"
+
+%h2 New post
 
 = form_for @post do |f|
   = f.text_field :title, placeholder: "Give this post a title"

@@ -1,4 +1,6 @@
-%h1 Edit post
+= provide :title, @post.title
+
+%h2 Edit post
 
 = form_for @post, url: post_path(@post) do |f|
   = f.text_field :title, placeholder: "Give this post a title"

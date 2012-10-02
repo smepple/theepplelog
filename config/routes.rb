@@ -3,11 +3,11 @@ Theepplelog::Application.routes.draw do
   match '/about', :to => 'static_pages#about'
   match '/admin', :to => 'posts#admin'
   match '/new', :to => 'posts#new'
-  match '/posts', :to => 'posts#index'
+  get '/posts', :to => 'posts#index'
   match '/archive', :to => 'posts#archive'
   match 'archive/:year/:month', :to => 'posts#archive', :as => 'archives'
   get '/:slug', :to => 'posts#show', :as => 'post'
-  post '/:id', :to => 'posts#update'
+  post '/:id', :to => 'posts#create'
   put '/:id', :to => 'posts#update'
   resources :posts
   resources :users

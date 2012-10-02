@@ -15,14 +15,31 @@
  *= require_tree .
  */
 
+body#main {
+  background: #FDFDFD;
+}
+
 .header {
   text-align: center;
   margin-top: 30px;
 }
 
+.header-links {
+  margin-top: -26px;
+}
+
+.header-links a {
+  padding: 0 6px 0 6px;
+}
+
 a.logo {
   display: block;
   text-decoration: none;
+}
+
+span.brand {
+  margin-right: -10px;
+  color: red;
 }
 
 em.tagline {
@@ -45,10 +62,13 @@ h3.title a {
 
 .post-header {
   text-align: center;
+  border-bottom: 5px solid #181818;
+  margin-bottom: 20px !important;
 }
 
 .post-list {
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .form.wide {
@@ -77,11 +97,19 @@ img.ajax-loader {
 }
 
 .footer {
+  /*position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background: white;*/
   text-align: center;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
+  /*margin-bottom: 30px;*/
 }
 
 .nav-links {
+  margin-top: -10px;
   margin-bottom: 10px;
 }
 

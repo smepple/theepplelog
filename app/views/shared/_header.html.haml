@@ -1,7 +1,15 @@
 .header
 
   .sixteen.columns
-    %h1= link_to "the epplelog", root_path, class: "logo"
+    %h1
+      = link_to root_path, class: "logo" do
+        %span= "the "
+        %span.brand= "E"
+        %span= "pplelog"
     %em.tagline this is where I write
+
+  .three.columns.alpha.header-links
+    = link_to "About", about_path
+    = link_to "Archive", archive_path
 
   %hr

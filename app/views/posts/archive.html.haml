@@ -10,6 +10,6 @@
     - @posts_by_month.each do |month_name, posts|
       - year = posts.first.published_at.strftime('%Y')
       - month = posts.first.published_at.strftime('%m')
-      %h3= link_to month_name, archives_path(year, month)
+      %h4= link_to month_name, archives_path(year, month)
 
 = render 'shared/footer'

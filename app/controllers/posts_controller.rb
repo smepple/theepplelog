@@ -8,10 +8,13 @@ class PostsController < ApplicationController
 
   def archive
     @posts_by_month = Post.where(draft: false).all.group_by { |post| post.published_at.strftime("%B %Y") }
-    @posts_in_month = Post.where('draft = ? AND published_at BETWEEN ? AND ?', 
-                                    false, 
-                                    "#{params[:year]}-#{params[:month]}-01",
-                                    "#{params[:year]}-#{params[:month]}-31").all
+    
+    if params[:year].present? && params[:month].present?
+      @posts_in_month = Post.where('draft = ? AND published_at BETWEEN ? AND ?', 
+                                      false, 
+                                      "#{params[:year]}-#{params[:month]}-01",
+                                      "#{params[:year]}-#{params[:month]}-31").all
+    end
   end
 
   def admin
@@ -27,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.create(params[:post])
 
     if @post.save
-      redirect_to root_path
+      redirect_to admin_path
     else
       flash = "Oops"
       render 'new'

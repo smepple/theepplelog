@@ -1,11 +1,7 @@
 .footer
   %hr
 
-  .nav-links
-    = link_to "Home", root_path
-    = link_to "About", about_path
-    = link_to "Archive", archive_path
-    = link_to "Admin", admin_path
+  = render 'shared/nav_links'
 
   &copy Copyright 2012
   - current_year = Time.now.strftime("%Y")
@@ -13,5 +9,5 @@
     = "- #{current_year}"
   Scott Epple
 
-  %p
-    = debug(params) if Rails.env.development?
+  / %p
+  /   = debug(params) if Rails.env.development?

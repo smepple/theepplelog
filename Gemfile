@@ -9,6 +9,7 @@ gem 'skeleton-rails'
 gem 'sorcery'
 gem 'redcarpet'
 gem 'will_paginate'
+gem 'tweet-button'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

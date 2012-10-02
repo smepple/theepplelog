@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include TweetButton
 
   def full_title(page_title)
     base_title = "the epplelog"

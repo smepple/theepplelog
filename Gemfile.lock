@@ -153,6 +153,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    tweet-button (0.1.0)
     tzinfo (0.3.33)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
@@ -178,5 +179,6 @@ DEPENDENCIES
   skeleton-rails
   sorcery
   sqlite3
+  tweet-button
   uglifier
   will_paginate

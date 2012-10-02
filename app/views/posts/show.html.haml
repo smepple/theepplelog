@@ -8,5 +8,9 @@
 
 .ten.columns
   = markdown(@post.content)
+  %p
+    = tweet_button via: 'smepple', count: 'horizontal', text: "Great read! the Epplelog | #{@post.title}"
+    %script{:src => "//platform.linkedin.com/in.js", :type => "text/javascript"}
+    %script{"data-counter" => "right", :type => "IN/Share"}
 
 = render 'shared/footer'

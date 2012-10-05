@@ -57,6 +57,7 @@ GEM
     faraday (0.8.4)
       multipart-post (~> 1.1)
     ffi (1.1.5)
+    google-analytics-rails (0.0.3)
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -169,6 +170,7 @@ DEPENDENCIES
   annotate
   capybara
   coffee-rails
+  google-analytics-rails
   haml-rails
   jquery-rails
   pg

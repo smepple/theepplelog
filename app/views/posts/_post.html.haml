@@ -1,3 +1,5 @@
 .post-stub
   %em= post.published_at.strftime("%b %e %Y")
   %h3.title= link_to post.title, post_path(post.slug)
+  - comments_url = "#{post_path(post.slug)}#disqus_thread"
+  %em.comments= link_to "View comments", comments_url, class: "disqus-link"

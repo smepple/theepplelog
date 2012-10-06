@@ -1,0 +1,15 @@
+= provide :title, @post.title
+
+.header.preview
+  = link_to "Exit preview mode", edit_post_path(@post), class: "button"
+
+= render 'shared/header'
+
+.post-header.six.columns
+  %em= @post.updated_at.strftime("%b %e %Y")
+  %h3= @post.title
+
+.ten.columns
+  = markdown(@post.content)
+
+= render 'shared/footer'

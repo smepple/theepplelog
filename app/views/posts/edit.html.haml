@@ -11,4 +11,5 @@
       = f.check_box :draft
       Draft
     = f.submit
+    = link_to "Preview post", preview_path(@post), class: "button"
     = link_to "Cancel", admin_path

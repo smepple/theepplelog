@@ -15,9 +15,13 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :slug, :content, :draft, :published_at
 
+  validates_presence_of :title, :slug, :content
+  validates_uniqueness_of :title, :slug, :on => :create
+  validates_length_of :title, :in => 2..50
+
   default_scope :order => 'published_at DESC'
 
-  before_create :set_slug
+  before_validation :set_slug
   before_save :set_published_at
 
   def set_slug

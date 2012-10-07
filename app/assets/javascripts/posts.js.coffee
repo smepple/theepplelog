@@ -7,6 +7,6 @@ jQuery ->
     $(window).scroll ->
       url = $('.pagination .next_page').attr('href')
       if url && $(window).scrollTop() > $(document).height() - $(window).height() - 300
-        $('.pagination').html("<img class='ajax-loader' src='assets/ajax-loader.gif' /><em>Fetching older posts</em>")
+        $('.pagination').html("<img class='ajax-loader' src='assets/7.gif' /><em>Fetching older posts</em>")
         $.getScript(url)
     $(window).scroll()

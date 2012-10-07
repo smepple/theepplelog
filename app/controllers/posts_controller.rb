@@ -33,9 +33,9 @@ class PostsController < ApplicationController
     @post = Post.create(params[:post])
 
     if @post.save
+      flash[:success] = "Created!"
       redirect_to admin_path
     else
-      flash = "Oops"
       render 'new'
     end
   end
@@ -49,9 +49,9 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(params[:post])
-      redirect_to admin_path
+      flash.now[:success] = "Updated!"
+      render 'edit'
     else
-      flash = "Oops"
       render 'edit'
     end
   end

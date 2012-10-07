@@ -82,6 +82,9 @@ GEM
     multi_json (1.3.6)
     multipart-post (1.1.5)
     nokogiri (1.5.5)
+    numbers_and_words (0.4.0)
+      activesupport
+      i18n
     oauth (0.4.7)
     oauth2 (0.6.1)
       faraday (~> 0.7)
@@ -173,6 +176,7 @@ DEPENDENCIES
   google-analytics-rails
   haml-rails
   jquery-rails
+  numbers_and_words
   pg
   rails (= 3.2.7)
   redcarpet

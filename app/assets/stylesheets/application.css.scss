@@ -22,11 +22,11 @@ body#main {
   /*background: #EEE;*/
   /*background: #EF4723;*/
   background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retro_intro.png);
-  font-family: 'Gentium Book Basic', serif;
+  font-family: 'Gentium Book Basic', 'Georgia', serif;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Open Sans', 'Helvetica Nueue', sans-serif !important;
   font-weight: 800 !important;
   color: #222 !important;
 }
@@ -83,7 +83,7 @@ h3.title {
 
 .post-header {
   text-align: center;
-  border-bottom: 5px solid #181818;
+  border-bottom: 2px solid #181818;
   margin-bottom: 20px !important;
 }
 

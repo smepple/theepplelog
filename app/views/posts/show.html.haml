@@ -6,7 +6,7 @@
   %em= @post.published_at.strftime("%b %e %Y")
   %h3= @post.title
 
-.ten.columns
+.ten.columns.omega
   = markdown(@post.content)
   %p
     = tweet_button via: 'smepple', count: 'horizontal', text: "Great read! the Epplelog | #{@post.title}"

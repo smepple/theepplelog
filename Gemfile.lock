@@ -57,7 +57,19 @@ GEM
     faraday (0.8.4)
       multipart-post (~> 1.1)
     ffi (1.1.5)
+    fuubar (1.1.0)
+      rspec (~> 2.0)
+      rspec-instafail (~> 0.2.0)
+      ruby-progressbar (~> 1.0.0)
     google-analytics-rails (0.0.3)
+    growl (1.0.3)
+    guard (1.3.2)
+      listen (>= 0.4.2)
+      thor (>= 0.14.6)
+    guard-pow (1.0.0)
+      guard (>= 1.1)
+    guard-rspec (0.5.5)
+      guard (>= 0.8.4)
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -74,6 +86,10 @@ GEM
     json (1.7.5)
     libwebsocket (0.1.5)
       addressable
+    listen (0.4.7)
+      rb-fchange (~> 0.0.5)
+      rb-fsevent (~> 0.9.1)
+      rb-inotify (~> 0.8.8)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -115,6 +131,11 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (0.9.2.2)
+    rb-fchange (0.0.5)
+      ffi
+    rb-fsevent (0.9.1)
+    rb-inotify (0.8.8)
+      ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.1.1)
@@ -125,12 +146,14 @@ GEM
     rspec-core (2.11.1)
     rspec-expectations (2.11.3)
       diff-lcs (~> 1.1.3)
+    rspec-instafail (0.2.4)
     rspec-mocks (2.11.3)
     rspec-rails (2.11.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
+    ruby-progressbar (1.0.2)
     rubyzip (0.9.9)
     sass (3.2.1)
     sass-rails (3.2.5)
@@ -147,6 +170,10 @@ GEM
       bcrypt-ruby (~> 3.0.0)
       oauth (~> 0.4.4)
       oauth2 (~> 0.6.0)
+    spork (1.0.0rc3)
+    spork-rails (3.2.0)
+      rails (>= 3.0.0, < 3.3.0)
+      spork (>= 1.0rc0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -173,17 +200,23 @@ DEPENDENCIES
   annotate
   capybara
   coffee-rails
+  fuubar
   google-analytics-rails
+  growl
+  guard-pow
+  guard-rspec
   haml-rails
   jquery-rails
   numbers_and_words
   pg
   rails (= 3.2.7)
+  rb-fsevent
   redcarpet
   rspec-rails
   sass-rails
   skeleton-rails
   sorcery
+  spork-rails
   sqlite3
   tweet-button
   uglifier

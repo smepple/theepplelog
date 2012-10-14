@@ -1,0 +1,44 @@
+h1.main-header {
+  font-family: $h1_primary_font, $h1_secondary_font, $h1_tertiary_font;
+  color: $h1_color !important;
+}
+
+.header {
+  text-align: center;
+  margin-top: 30px;
+}
+
+a.logo {
+  font-size: 68px;
+  color: #444;
+  padding-bottom: 20px;
+  font-weight: 400;
+  display: block;
+  background: none;
+  border-bottom: none;
+}
+
+span.brand {
+  margin-right: -10px;
+  color: red;
+}
+
+em.tagline {
+  line-height: 21px;
+  color: #777;
+  display: block;
+  margin: -10px 0 5px 0;
+}
+
+.header-links {
+  margin-bottom: 3px;
+
+  a { margin: 0 6px 0 6px; }
+}
+
+/* ADMIN AREA */
+
+.header.preview {
+  position: fixed;
+  top: 0px;
+}

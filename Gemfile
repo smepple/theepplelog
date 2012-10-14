@@ -27,6 +27,7 @@ group :development, :test do
   # gem 'guard-livereload'
   # gem 'rack-livereload'
   gem 'guard-pow'
+  gem 'guard-spork'
   gem 'growl'
   gem 'spork-rails'
 end
@@ -45,6 +46,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :production do

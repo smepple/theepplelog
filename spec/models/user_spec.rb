@@ -2,13 +2,7 @@ require 'spec_helper'
 
 describe User do
 
-  before do
-    @user = User.new
-    @user.username = 'testuser'
-    @user.email = 'test@example.com'
-    @user.password = 'foobarbaz'
-    @user.save
-  end
+  before { @user = create(:user) }
 
   subject { @user }
 

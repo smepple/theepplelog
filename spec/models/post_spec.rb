@@ -16,13 +16,7 @@ require 'spec_helper'
 
 describe Post do
   
-  before do
-    @post = Post.new
-    @post.title = "Lorem ipsum"
-    @post.content = "Dolor sit amet!"
-    @post.draft = 1
-    @post.save
-  end
+  before { @post = create(:post) }
 
   subject { @post }
 

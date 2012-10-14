@@ -48,40 +48,9 @@ a.disqus-link, a.disqus-link:visited {
 .form.wide {
   text-align: center;
 
-  input[type="text"],
-  textarea,
-  textarea:focus {
-    -webkit-appearance: none !important;
-    background: none;
-    font-family: 'Gentium Book Basic', serif;
-    color: #333;
-    font-size: 16px;
-    border: none !important;
-    outline: none !important;
-    width: 100%;
-  }
+  #{$all-text-inputs}, textarea, textarea:focus { width: 100%; }
 
-  textarea,
-  textarea:focus {
-    overflow: auto;
-    resize: none;
-    height: 450px;
-    width: 100%;
-  }
-
-  input[placeholder], 
-  [placeholder], 
-  *[placeholder],
-  input::-webkit-input-placeholder,
-  textarea::-webkit-input-placeholder,
-  input::-moz-placeholder,
-  textarea::-moz-placeholder,
-  input::-ms-input-placeholder,
-  textarea::-ms-input-placeholder {
-    font-family: 'Gentium Book Basic', serif;
-    color: #333;
-    font-size: 16px;
-  }
+  textarea, textarea:focus { height: 450px; }
 }
 
 div.alert {

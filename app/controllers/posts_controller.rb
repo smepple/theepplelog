@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :require_login_from_http_basic, only: ['new', 'admin', 'edit']
+  before_filter :authorize, only: ['new', 'admin', 'edit', 'preview']
   before_filter :find_post, only: ['edit', 'update', 'preview']
 
   def index

@@ -1,0 +1,9 @@
+.header.four.columns.offset-by-six
+  %h2 Sign in
+
+  .form
+    = form_tag sessions_path do
+      = text_field_tag :username, nil, placeholder: "Enter username...", autocomplete: "off"
+      = password_field_tag :password, nil, placeholder: "Enter password...", autocomplete: "off"
+      = submit_tag "Sign in"
+      = link_to "Cancel", root_path

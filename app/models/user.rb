@@ -17,4 +17,5 @@ class User < ActiveRecord::Base
   validates_presence_of :username, :password
   validates_length_of :username, in: 4..12
   validates_length_of :password, minimum: 8
+  validates_uniqueness_of :username
 end

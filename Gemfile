@@ -29,6 +29,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'growl'
   gem 'spork-rails'
+  gem 'launchy'
 end
 
 # Gems used only for assets and not required

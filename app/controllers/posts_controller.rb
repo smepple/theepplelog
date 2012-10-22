@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :authorize, only: ['new', 'admin', 'edit', 'preview']
-  before_filter :find_post, only: ['edit', 'update', 'preview']
+  before_filter :authorize, only: ['new', 'admin', 'edit', 'preview', 'destroy']
+  before_filter :find_post, only: ['edit', 'update', 'preview', 'destroy']
 
   def index
     @posts = Post.where(draft: false).paginate(:page => params[:page], :per_page => 10)
@@ -54,6 +54,12 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @post.destroy
+    flash[:success] = "destroyed!"
+    redirect_to admin_path
   end
 
   private

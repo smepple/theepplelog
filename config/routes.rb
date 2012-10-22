@@ -13,6 +13,7 @@ Theepplelog::Application.routes.draw do
   post '/sessions', :to => 'sessions#create'
   post '/:id', :to => 'posts#create'
   put '/:id', :to => 'posts#update'
+  delete '/:id', :to => 'posts#destroy'
   resources :posts
   resources :users
   resources :sessions

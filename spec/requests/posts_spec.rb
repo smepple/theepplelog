@@ -241,6 +241,28 @@ describe "Posts" do
           # TODO: test publishing a draft
         end
       end
+
+      describe "deleting a post" do
+
+        it "deletes the post" do
+          expect { click_link "Delete" }.to change(Post, :count).by(-1)
+        end
+
+        describe "redirects to the admin page" do
+
+          before { click_link "Delete" }
+
+          subject { page }
+
+          it { should have_content "destroyed!" }
+          it { should_not have_content @post.title }
+          it { should have_link "Home" }
+          it { should have_link "New post" }
+          it { should have_link "Sign out" }
+          it { should have_content "Drafts" }
+          it { should have_content "Published" }
+        end
+      end
     end
   end
 

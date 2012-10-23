@@ -15,6 +15,9 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :slug, :content, :draft, :published_at
 
+  # support for versioning
+  has_paper_trail
+
   validates_presence_of :title, :slug, :content
   validates_uniqueness_of :title, :slug, :on => :create
   validates_length_of :title, :in => 2..50

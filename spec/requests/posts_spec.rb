@@ -239,6 +239,7 @@ describe "Posts" do
             @post.reload.content.should == @new_post_content
           end
           # TODO: test publishing a draft
+          # TODO: test undoing/redoing an update
         end
       end
 
@@ -254,13 +255,55 @@ describe "Posts" do
 
           subject { page }
 
-          it { should have_content "destroyed!" }
+          it { should have_content "Destroyed!" }
+          it { should have_link "undo" }
           it { should_not have_content @post.title }
           it { should have_link "Home" }
           it { should have_link "New post" }
           it { should have_link "Sign out" }
           it { should have_content "Drafts" }
           it { should have_content "Published" }
+        end
+
+        describe "undoing a delete" do
+
+          before { click_link "Delete" }
+
+          it "ressurects the post" do
+            expect { click_link "undo" }.to change(Post, :count).by(1)
+          end
+
+          describe "after undo" do
+            
+            before { click_link "undo" }
+
+            subject { page }
+
+            it { should have_content @post.title }
+            it { should have_link "redo" }
+          end
+        end
+
+        describe "redoing a delete" do
+
+          before do
+            click_link "Delete"
+            click_link "undo"
+          end
+
+          it "deletes the post" do
+            expect { click_link "redo" }.to change(Post, :count).by(-1)
+          end
+
+          describe "after redo" do
+
+            before { click_link "redo" }
+
+            subject { page }
+
+            it { should_not have_content @post.title }
+            it { should have_link "undo" }
+          end
         end
       end
     end

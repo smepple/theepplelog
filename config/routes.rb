@@ -1,5 +1,6 @@
 Theepplelog::Application.routes.draw do
 
+  post "versions/:id/revert", :to => "versions#revert", :as => "revert_version"
   match '/signin', :to => 'sessions#new'
   match '/signout', to: 'sessions#destroy', as: 'signout'
   match '/about', :to => 'static_pages#about'

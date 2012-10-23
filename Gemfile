@@ -12,6 +12,7 @@ gem 'tweet-button'
 gem 'google-analytics-rails'
 gem 'numbers_and_words'
 gem 'bourbon'
+gem 'paper_trail'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

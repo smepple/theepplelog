@@ -111,6 +111,9 @@ GEM
     numbers_and_words (0.4.0)
       activesupport
       i18n
+    paper_trail (2.6.3)
+      activerecord (~> 3.0)
+      railties (~> 3.0)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -215,6 +218,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   numbers_and_words
+  paper_trail
   pg
   rails (= 3.2.7)
   rb-fsevent

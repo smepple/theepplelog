@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(params[:post])
-      flash.now[:success] = "Updated!"
+      flash.now[:success] = "Updated! #{undo_link}"
       render 'edit'
     else
       render 'edit'
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = "destroyed!"
+    flash[:success] = "Destroyed! #{undo_link}"
     redirect_to admin_path
   end
 
@@ -66,5 +66,9 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def undo_link
+    view_context.link_to("undo", revert_version_path(@post.versions.scoped.last), method: :post)
   end
 end

@@ -30,6 +30,7 @@ describe Post do
   it { should respond_to :published_at }
   it { should respond_to :set_slug }
   it { should respond_to :set_published_at }
+  it { should respond_to :tag_list }
 
   specify "when title is not unique" do
     dup_post.should_not be_valid

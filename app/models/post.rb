@@ -13,7 +13,8 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :title, :slug, :content, :draft, :published_at
+  attr_accessible :title, :slug, :content, :draft, :published_at, :tag_list
+  acts_as_taggable
 
   # support for versioning
   has_paper_trail

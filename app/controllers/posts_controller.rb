@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_filter :find_post, only: ['edit', 'update', 'preview', 'destroy']
 
   def index
-    @posts = Post.where(draft: false).paginate(:page => params[:page], :per_page => 10)
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).where(draft: false).paginate(:page => params[:page], :per_page => 10)
+    else
+      @posts = Post.where(draft: false).paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   def archive

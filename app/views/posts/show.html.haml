@@ -8,6 +8,11 @@
 
 .ten.columns.omega
   = markdown(@post.content)
+  - if @post.tags.any?
+    %p
+      %strong Tags:
+      - @post.tags.each do |t|
+        = link_to t.name, tag_path(t.name)
   %p
     = tweet_button via: 'smepple', count: 'horizontal', text: "Great read! the Epplelog | #{@post.title}"
     %script{:src => "//platform.linkedin.com/in.js", :type => "text/javascript"}

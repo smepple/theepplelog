@@ -1,0 +1,9 @@
+= provide :title, "Tags"
+
+= render 'shared/header'
+
+.post-list
+  - @tags.each do |t|
+    %h4= link_to t.name, tag_path(t.name)
+
+= render 'shared/footer'

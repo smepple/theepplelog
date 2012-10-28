@@ -1,5 +1,9 @@
 Theepplelog::Application.routes.draw do
 
+  get "tags/index"
+
+  get 'tags', to: 'tags#index', as: 'tags'
+  get 'tags/:tag', to: 'posts#index', as: 'tag'
   post "versions/:id/revert", :to => "versions#revert", :as => "revert_version"
   match '/signin', :to => 'sessions#new'
   match '/signout', to: 'sessions#destroy', as: 'signout'

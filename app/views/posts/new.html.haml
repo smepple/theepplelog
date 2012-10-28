@@ -8,6 +8,7 @@
     = render 'shared/error_messages', object: f.object
     = f.text_field :title, placeholder: "Give this post a title..."
     = f.text_area :content, placeholder: "Start writing..."
+    = f.text_field :tag_list, placeholder: "Add tags..."
     = f.label :draft do
       = f.check_box :draft
       Draft

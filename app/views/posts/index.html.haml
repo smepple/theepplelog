@@ -3,6 +3,12 @@
 = render 'shared/header'
 
 #posts
+  - if params[:tag]
+    .post-stub
+      %em Posts tagged with
+      %em
+        %strong= params[:tag]
+
   - if @posts.any?
     = render @posts
   - else

@@ -221,6 +221,8 @@ describe "Posts" do
         context "with valid attributes" do
 
           before do
+            @original_title = @post.title
+            @original_content = @post.content
             @new_post_title = "Great new post"
             @new_post_content = "Nulla vitae elit libero, a pharetra augue."
             fill_in "post_title", with: @new_post_title
@@ -231,6 +233,7 @@ describe "Posts" do
           subject { page }
 
           it { should have_content "Updated!" }
+          # it { should have_link "undo" }
           it { should have_content @new_post_title }
           it { should have_content @new_post_content }
 
@@ -239,7 +242,48 @@ describe "Posts" do
             @post.reload.content.should == @new_post_content
           end
           # TODO: test publishing a draft
-          # TODO: test undoing/redoing an update
+
+          # NOTE: pulled out undo update functionality for now
+          # describe "undoing an update" do
+
+          #   before { click_link "undo" }
+
+          #   it "reverts the changes" do
+          #     @post.reload.title.should == @original_title
+          #     @post.reload.content.should == @original_content
+          #   end
+
+          #   describe "after undo" do
+
+          #     subject { page }
+
+          #     it { should have_link "redo" }
+          #     it { should have_content @original_title }
+          #     it { should have_content @original_content }
+          #   end
+          # end
+
+          # describe "redoing an undid update" do
+
+          #   before do
+          #     click_link "undo"
+          #     click_link "redo"
+          #   end
+
+          #   it "reinstates the changes" do
+          #     @post.reload.title.should == @new_post_title
+          #     @post.reload.content.should == @new_post_content
+          #   end
+
+          #   describe "after redo" do
+
+          #     subject { page }
+
+          #     it { should have_link "undo" }
+          #     it { should have_content @new_post_title }
+          #     it { should have_content @new_post_content }
+          #   end
+          # end
         end
       end
 

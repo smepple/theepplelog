@@ -11,9 +11,9 @@ class PostsController < ApplicationController
     
     if params[:year].present? && params[:month].present?
       @posts_in_month = Post.where('draft = ? AND published_at BETWEEN ? AND ?', 
-                                      false, 
-                                      "#{params[:year]}-#{params[:month]}-01",
-                                      "#{params[:year]}-#{params[:month]}-31").all
+                                    false, 
+                                    "#{params[:year]}-#{params[:month]}-01",
+                                    "#{params[:year]}-#{params[:month]}-31").all
     end
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(params[:post])
-      flash.now[:success] = "Updated! #{undo_link}"
+      flash.now[:success] = "Updated!"
       render 'edit'
     else
       render 'edit'
